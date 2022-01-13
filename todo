@@ -1,0 +1,9 @@
+. When arrive in enterprise: 
+
+1 - Open terminal;
+2 - Open 3 tab's in terminal;
+  2.1 - For git commit,
+  2.2 - For npm run dev
+  2.3 - For sudo mongod
+
+When finished the project, delete this file.

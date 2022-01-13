@@ -3,7 +3,8 @@
 1 - Open terminal;
 2 - Open 3 tab's in terminal;
   2.1 - For git commit,
-  2.2 - For npm run dev
+  2.2 - For npm run dev || npm run production || 
+    2.2.1 - pm2 monit to monitoring the pm2
   2.3 - For sudo mongod
 
 When finished the project, delete this file.

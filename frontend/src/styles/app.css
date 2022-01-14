@@ -4,3 +4,7 @@
   text-decoration: none;
   list-style: none;
 }
+
+.todoForm {
+  padding-bottom: 40px;
+}

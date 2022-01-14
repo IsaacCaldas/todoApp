@@ -4,5 +4,23 @@
 
 .markedAsDone {
   text-decoration: line-through;
-  color: #777;
+  color: rgb(24, 211, 71);
+}
+
+.tableActions {
+  width: 105px;
+}
+
+.table {
+  background-color: #181818;
+}
+
+th {
+  background-color: #181818;
+  color: #ddd;
+}
+
+td {
+  background-color: #373737;
+  color: #efe;
 }

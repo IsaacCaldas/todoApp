@@ -4,17 +4,15 @@ import '../styles/app.css';
 
 import React from 'react'
 import Menu from '../template/Menu';
-import Todo from '../todo/Todo';
-import About from '../about/About';
+import Routes from './routes';
 
 export default props => {
 
   return (
 
-    <div className="">
+    <div className="container">
       <Menu />
-      <Todo />
-      <About />
+      <Routes />
     </div>
 
   );

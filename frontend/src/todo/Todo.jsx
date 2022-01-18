@@ -62,10 +62,10 @@ export default class Todo extends Component {
       description 
     }).then(resp => this.refresh());
   }
-
+  
   handleDelete(todo){
     
-    let del = confirm(`Deseja realmente deletar a tarefa: ${todo.description}?`);
+    let del = confirm(`Do you really want to delete the task: ${todo.description}?`);
 
     if (del === true){
       axios.delete(`${URL}/${todo._id}`).then(resp => this.refresh(this.state.description));

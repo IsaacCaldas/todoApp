@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from 'react-redux';
+
 import Grid from "../template/Grid";
 import IconButton from "../template/IconButton";
 
@@ -62,3 +64,19 @@ export default props => {
   );
 
 }
+
+/*
+function mapStateToProps(state){
+  return {
+
+  }
+}
+function mapDispatchToProps(state){
+  return {
+
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps)(TodoForm);*/

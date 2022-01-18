@@ -17,7 +17,7 @@ export const search = () => {
   }
 }
 
-export const add = description => {
+export const add = (description) => {
 
   return dispatch => {
     
@@ -28,3 +28,36 @@ export const add = description => {
       })).then(resp => dispatch(search()));
   }
 }
+
+export const markAsDone = (todo) => {
+
+  return dispatch => {
+
+    axios.put(`${URL}/${todo._id}`, {
+      ...todo,
+      done: true
+    }).then(resp => dispatch(search()));
+  }
+}
+
+export const markAsPending = (todo) => {
+
+  return dispatch => {
+
+    axios.put(`${URL}/${todo._id}`, {
+      ...todo,
+      done: false
+    }).then(resp => dispatch(search()));
+  }
+}
+/*
+export const deleteTodo = (todo) => {
+
+  return dispatch => {
+
+    axios.delete(`${URL}/${todo._id}`, {
+      ...todo,
+      done: false
+    }).then(resp => dispatch(search()));
+  }
+}*/

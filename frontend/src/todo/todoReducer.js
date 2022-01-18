@@ -12,10 +12,16 @@ export default (state = INITIAL_STATE, action) => {
         description: action.payload
       }
 
-      case 'TODO_SEARCHED': 
+    case 'TODO_SEARCHED': 
+    return {
+      ...state,
+      list: action.payload.data
+    }
+
+    case 'TODO_ADDED':
       return {
-        ...state,
-        list: action.payload.data
+        ...state, 
+        description: ''
       }
 
     default:

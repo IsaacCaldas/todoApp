@@ -100,7 +100,6 @@ export default class Todo extends Component {
           small='Register' 
         />
         <TodoForm 
-          description={this.state.description}
           handleChange={this.handleChange}
           handleAdd={this.handleAdd}
           handleSearch={this.handleSearch}

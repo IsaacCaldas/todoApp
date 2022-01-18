@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Grid from "../template/Grid";
 import IconButton from "../template/IconButton";
 
-export default props => {
+const TodoForm = props => {
 
   const keyHandler = 
   (e) => {
@@ -65,18 +65,18 @@ export default props => {
 
 }
 
-/*
 function mapStateToProps(state){
   return {
-
+    description: state.todo.description
   }
 }
+/*
 function mapDispatchToProps(state){
   return {
 
   }
-}
+}*/
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps)(TodoForm);*/
+  mapStateToProps
+  /*mapDispatchToProps*/)(TodoForm);

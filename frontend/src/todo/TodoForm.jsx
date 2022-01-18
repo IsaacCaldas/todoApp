@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { changeDescription } from "./todoActions";
 
 import Grid from "../template/Grid";
 import IconButton from "../template/IconButton";
@@ -35,7 +37,7 @@ const TodoForm = props => {
           id="description" 
           className="form-control"
           placeholder="Add a task"
-          onChange={props.handleChange}
+          onChange={props.changeDescription}
           onKeyUp={keyHandler}
           value={props.description}
           />
@@ -65,18 +67,10 @@ const TodoForm = props => {
 
 }
 
-function mapStateToProps(state){
-  return {
-    description: state.todo.description
-  }
-}
-/*
-function mapDispatchToProps(state){
-  return {
+const mapStateToProps = state => ({description: state.todo.description}); 
 
-  }
-}*/
+const mapDispatchToProps = dispatch => bindActionCreators({changeDescription}, dispatch);
 
 export default connect(
-  mapStateToProps
-  /*mapDispatchToProps*/)(TodoForm);
+  mapStateToProps,
+  mapDispatchToProps)(TodoForm);

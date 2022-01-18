@@ -50,14 +50,11 @@ export const markAsPending = (todo) => {
     }).then(resp => dispatch(search()));
   }
 }
-/*
-export const deleteTodo = (todo) => {
+
+export const remove = (todo) => {
 
   return dispatch => {
 
-    axios.delete(`${URL}/${todo._id}`, {
-      ...todo,
-      done: false
-    }).then(resp => dispatch(search()));
+    axios.delete(`${URL}/${todo._id}`).then(resp => dispatch(search()));
   }
-}*/
+}

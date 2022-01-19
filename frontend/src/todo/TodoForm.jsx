@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { changeDescription, search, add } from "./todoActions";
+import { add, changeDescription, search, clear } from "./todoActions";
 
 import Grid from "../template/Grid";
 import IconButton from "../template/IconButton";
@@ -15,18 +15,15 @@ class TodoForm extends Component {
 
   keyHandler(e){
 
-    const { add, search, description } = this.props;
+    const { search, description, add, clear} = this.props;
 
     switch(e.key) {
 
       case 'Enter':
-        
         e.shiftKey ? search() : add(description);
-        break;
 
       case 'Escape':
-        this.props.handleClear();
-        break;
+        clear();
 
       default:
         return false;
@@ -40,7 +37,7 @@ class TodoForm extends Component {
 
   render(){
 
-    const { add, search, description } = this.props;
+    const { search, description, add} = this.props;
 
     return (
       <div role='form' className="todoForm">
@@ -53,7 +50,7 @@ class TodoForm extends Component {
             placeholder="Add a task"
             onChange={this.props.changeDescription}
             onKeyUp={this.keyHandler}
-            value={description}
+            value={this.props.description}
             />
         </Grid>
 
@@ -66,12 +63,12 @@ class TodoForm extends Component {
           <IconButton 
             style='info'
             icon='search'
-            onClick={() => search()}
+            onClick={search}
           />
           <IconButton 
             style='default'
             icon='close'
-            onClick={this.props.handleClear}
+            onClick={this.props.clear}
           />
         </Grid>
       </div>
@@ -83,7 +80,7 @@ class TodoForm extends Component {
 
 const mapStateToProps = state => ({description: state.todo.description}); 
 
-const mapDispatchToProps = dispatch => bindActionCreators({changeDescription, search, add}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ add, changeDescription, search, clear }, dispatch);
 
 export default connect(
   mapStateToProps,
